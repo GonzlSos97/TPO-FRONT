@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/background.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+header, nav, main, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos Logo/Nombre usando Flexbox*/
+header .banner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    color: rgba(240, 248, 255, 0.808);
+}
+
+header .banner .logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.name span{
+    color: rgb(0, 94, 182);
+}
+
+/* Estilos Navegador usando Grid */
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    display: block;
+}
+
+.navegador{
+    display: flex;
+    justify-content: space-between;
+    ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.active {
+    color: red;
+}
+
+@media (max-width: 1080px) {
+    /* Estilos para tablet */
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Estilos para tablet */
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Estilos para móvil */
+    header, nav, main, footer {
+        padding: 10px;
+    }
+
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
+
+/* Estilos para la sección "Sobre nosotros" */
+#sobre-nosotros {
+    padding: 20px;
+}
+
+#sobre-nosotros h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sobre-nosotros .parte {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#sobre-nosotros .parte.uno img,
+#sobre-nosotros .parte.tres img {
+    width: 33.33%;
+    margin-right: 20px;
+}
+
+#sobre-nosotros .parte.uno p,
+#sobre-nosotros .parte.tres p {
+    width: 66.67%; 
+    font-size: 20px; 
+}
+
+#sobre-nosotros .parte.dos {
+    justify-content: center;
+    text-align: center;
+}
+
+#sobre-nosotros .parte.dos .destacado {
+    font-weight: bold;
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+/* Ajustes responsivos sobre-nosotros */
+@media (max-width: 768px) {
+    #sobre-nosotros .parte {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #sobre-nosotros .parte img {
+        margin: 0 auto 20px auto;
+        width: 100%;
+    }
+
+    #sobre-nosotros .parte.uno p,
+    #sobre-nosotros .parte.tres p {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    #sobre-nosotros .parte.tres img {
+        margin: 20px auto 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #sobre-nosotros .parte.dos .destacado {
+        font-size: 1em;
+    }
+}
+
+/* Estilos para la sección "Proyectos" */
+
+#proyectos {
+    padding: 20px;
+    text-align: center;
+}
+
+#proyectos h2 {
+    margin-bottom: 20px;
+}
+
+#proyecyos p {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#proyectos .galeria {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#proyectos .proyecto {
+    position: relative;
+    width: 30%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#proyectos .proyecto img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+#proyectos .proyecto .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#proyectos .proyecto:hover img {
+    transform: scale(1.1);
+}
+
+#proyectos .proyecto:hover .overlay {
+    opacity: 1;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    #proyectos .proyecto {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    #proyectos .proyecto {
+        width: 100%;
+    }
+}
+
+/* estilo para la hoja contacto */
+#contact-us, #more-info {
+    background: rgb(138, 112, 112);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} 
+
+p{
+    text-align: center;
+    margin: 5px auto;
+}
+
+#contact-us {
+    flex-grow: 2;
+}
+
+#more-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.container {
+    text-align: center;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 10px;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    text-align: center;
+}
+
